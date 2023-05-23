@@ -27,6 +27,7 @@
 
 <?php include 'koneksi.php'?>
 <?php include 'inputData.php'?>
+<?php include 'hapusData.php'?>
 
 
 <?php
@@ -38,7 +39,7 @@ if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
       echo "<ul>";
-      echo "<li>". $row["name"]. " <button>Delete!</button></li>";
+      echo "<li>". $row["name"]. " <a href=''>Delete!</a></li>";
       echo "</ul>";
     }
   } else {
