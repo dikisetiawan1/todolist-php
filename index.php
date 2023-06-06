@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-
-<?php include 'koneksi.php'?>
+<div hidden>
+  <?php include 'koneksi.php'?>
+</div>
 
 
 
@@ -42,6 +43,7 @@
 <?php include 'inputData.php'?>
 
 
+
 <?php
 
 // show data from database
@@ -69,7 +71,7 @@ if ($data->num_rows > 0) {
       echo "<tr>";
       echo"<td>$no</td>";
       echo"<td>$row->name</td>";
-      echo"<td><a  class='btn btn-primary ' href=confirmData.php?id=$row->id>Done! </a></td> ";
+      echo"<td><button class='btn btn-primary' id='ubah' onclick='ubahBg()'>Done!</button></td> ";
       echo"<td><a class='btn btn-warning ' href=ubahData.php?id=$row->id>Update! </a></td> ";
       echo"<td><a class='btn btn-danger ' href=hapusData.php?id=$row->id>Delete!</a></td> ";
       echo "</tr>";
@@ -89,7 +91,14 @@ if ($data->num_rows > 0) {
     </div>
   </div>
 </div>
+<script>
+  const ubah = document.querySelector('#ubah');
 
+
+  function ubahBg(){
+    ubah.style.backgroundColor ="green";
+  }
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
